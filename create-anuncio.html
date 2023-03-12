@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear anuncio</title>
+</head>
+<body>
+  <h1>Creación de anuncio</h1>
+
+  <form id="createAnuncioForm">
+    <label for="anuncioNombre">Nombre</label>
+    <input type="text" name="anuncioNombre" id="anuncioNombre" required>
+    <br>    
+    <label for="anuncioDescripcion">Descripción</label>
+    <textarea name="anuncioDescripcion" id="anuncioDescripcion" cols="30" rows="10" required></textarea>
+    <br>
+    <label for="anuncioPrecio">Precio</label>
+    <input type="number" name="anuncioPrecio" id="anuncioPrecio" required>
+    <br>    
+    <label for="anuncioCompraVenta">Compra/Venta</label>
+    <input type="checkbox" name="anuncioCompraVenta" id="anuncioCompraVenta" required>
+    <br>    
+    <label for="anuncioImagen">Imagen</label>
+    <input type="url" name="anuncioImagen" id="anuncioImagen">
+    <br>    
+
+
+    <button type="submit">Crear anuncio</button>
+  </form>
+
+  <script type="module" src="./create-anuncio/index.js"></script>
+</body>
+</html>
