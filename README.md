@@ -22,11 +22,6 @@ Fecha: 19.MAR.23
       "username": "xroca@vilamatica.com",
       "password": "$2b$10$9g74E9vUL7xrfECDP0wuqum/X/38sV/bK0PtMpQcPViy4lkmFFq/a",
       "id": 1
-    },
-    {
-      "username": "xroca@bcn.cat",
-      "password": "$2b$10$9g74E9vUL7xrfECDP0wuqum/X/38sV/bK0PtMpQcPViy4lkmFFq/a",
-      "id": 2
     }
   ]
 ```
@@ -34,7 +29,18 @@ Fecha: 19.MAR.23
 * anuncios
 
 ```json
-
+"anuncios": [
+    {
+      "nombre": "Vendo coche",
+      "descripcion": "Perfecto, poco kilómetros",
+      "precio": "10000",
+      "compraventa": false,
+      "imagen": "https://totalrenting.es/wp-content/plugins/shortcode_totalRenting/assets/img/coche-CTA.png",
+      "userId": 1,
+      "updatedAt": "2023-03-12T11:04:23.455Z",
+      "id": 2
+    }
+]
 ```
 
 ### Modulos
