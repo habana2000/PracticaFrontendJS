@@ -3,15 +3,21 @@ export function buildAnuncioView(anuncio) {
   newAnuncioElement.classList.add('anuncio')
 
   newAnuncioElement.innerHTML = `
-    <a href="/anuncio-detail.html?anuncioId=${anuncio.id}">
-      <div class="user-info">
-      </div>
-      <p>${anuncio.nombre}</p>
-      <p>${anuncio.descripcion}</p>
-      <p>${anuncio.precio}</p>
-      <p>${anuncio.compraventa}</p>
-      <p>${anuncio.imagen}</p>
-    </a>
+  <table>
+  <tr>
+    <td>
+      <a href="/anuncio-detail.html?anuncioId=${anuncio.id}">
+        <b>Nombre: ${anuncio.nombre}</b>
+      </a>
+      <p>Descripción: ${anuncio.descripcion}</p>
+      <p>Precio: ${anuncio.precio}</p>
+      <p>Compra/Venta: ${anuncio.compraventa}</p>
+    </td>
+    <td>
+      <img src=${anuncio.imagen} alt=${anuncio.imagen}>
+    </td>
+  </tr>
+</table>
   `;
 
   return newAnuncioElement;
