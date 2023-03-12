@@ -1,14 +1,14 @@
 export const createAnuncio = async (anuncioNombre, 
                                     anuncioDescripcion,
                                     anuncioPrecio,
-                                    anuncioCompraVenta,
+                                    booleanCompraVenta,
                                     anuncioImagen) => {
 
   const newAnuncioElement = {
     nombre: anuncioNombre,
     descripcion: anuncioDescripcion,
     precio: anuncioPrecio,
-    compraventa: anuncioCompraVenta,
+    compraventa: booleanCompraVenta,
     imagen: anuncioImagen
   }
 

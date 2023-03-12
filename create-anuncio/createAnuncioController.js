@@ -1,4 +1,5 @@
 import { createAnuncio } from "./createAnuncio.js";
+import { pubSub } from "../pubSub.js";
 
 export const createAnuncioController = async (createAnuncioFormElement) => {
   createAnuncioFormElement.addEventListener('submit', async (event) => {
@@ -8,14 +9,25 @@ export const createAnuncioController = async (createAnuncioFormElement) => {
     const anuncioNombre = formData.get('anuncioNombre');
     const anuncioDescripcion = formData.get('anuncioDescripcion');
     const anuncioPrecio = formData.get('anuncioPrecio');
-    const anuncioCompraVenta = formData.get('anuncioCompraVenta');
     const anuncioImagen = formData.get('anuncioImagen');
+    const anuncioCompraVenta = formData.get('anuncioCompraVenta');
 
+    
     try {
-      await createAnuncio(anuncioNombre, anuncioDescripcion, anuncioPrecio, anuncioCompraVenta, anuncioImagen)
+      // tratamiento de los radio-buttons de compraventa
+      const booleanCompraVenta = isCompraVentaOK(anuncioCompraVenta)
+      await createAnuncio(anuncioNombre, anuncioDescripcion, anuncioPrecio, booleanCompraVenta, anuncioImagen)
       window.location = '/'
     } catch (error) {
       alert(error)
     }
   })
+}
+
+function isCompraVentaOK(anuncioCompraVenta) {
+  if (!anuncioCompraVenta) {
+    throw(new Error('Se debe indicar el tipo de anuncio: Compra / Venta'))
+  }
+
+  return anuncioCompraVenta === "compra"
 }

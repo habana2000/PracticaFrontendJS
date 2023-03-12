@@ -8,6 +8,7 @@ export const anuncioDetailController = async (anuncioDetailElement, anuncioId) =
     const anuncio = await getAnuncioById(anuncioId)
     anuncioDetailElement.innerHTML = buildAnuncioDetail(anuncio)
     handleDeleteAnuncioButton(anuncioDetailElement, anuncio)
+    handleVolverListaButton(anuncioDetailElement)
   } catch (error) {
     alert(error)
   }
@@ -34,4 +35,13 @@ export const anuncioDetailController = async (anuncioDetailElement, anuncioId) =
       }
     }
   }
+}
+
+function handleVolverListaButton(anuncioDetailElement) {
+  const volverButtonElement = anuncioDetailElement.querySelector('#volverLista');
+
+  // añadir evento click al boton + enganchar con sparrest
+  volverButtonElement.addEventListener('click', async () => {
+    window.location = '/'
+  })
 }

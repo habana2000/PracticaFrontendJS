@@ -1,0 +1,20 @@
+.anuncio-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.anuncio-detail table {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.anuncio-detail img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.anuncio-detail button {
+  padding: 10px;
+  margin-left: 20px;
+}
