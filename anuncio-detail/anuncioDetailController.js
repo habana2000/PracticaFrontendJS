@@ -8,7 +8,8 @@ export const anuncioDetailController = async (anuncioDetailElement, anuncioId) =
     const anuncio = await getAnuncioById(anuncioId)
     anuncioDetailElement.innerHTML = buildAnuncioDetail(anuncio)
     handleDeleteAnuncioButton(anuncioDetailElement, anuncio)
-    handleVolverListaButton(anuncioDetailElement)
+    // Cambio la programación del boton voler por --> onClick="history.back ()" 
+    // handleVolverListaButton(anuncioDetailElement)
   } catch (error) {
     alert(error)
   }
@@ -37,6 +38,7 @@ export const anuncioDetailController = async (anuncioDetailElement, anuncioId) =
   }
 }
 
+/*
 function handleVolverListaButton(anuncioDetailElement) {
   const volverButtonElement = anuncioDetailElement.querySelector('#volverLista');
 
@@ -45,3 +47,4 @@ function handleVolverListaButton(anuncioDetailElement) {
     window.location = '/'
   })
 }
+*/
