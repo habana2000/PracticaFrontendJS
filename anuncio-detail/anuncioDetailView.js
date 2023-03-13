@@ -33,8 +33,9 @@ export const buildAnuncioDetail = (anuncio) => {
     </tr>
     <tr>
       <td colspan="2">
-        <button id="deleteAnuncio">borrar anuncio</button>
-        <button id="volverLista" onClick="history.back ()">volver a la lista</button>       
+      <button id="updateAnuncio">modificar anuncio</button>
+      <button id="deleteAnuncio">borrar anuncio</button>
+      <button id="volverLista" onClick="history.back ()">volver a la lista</button>       
       </td>
     </tr>
   </table>

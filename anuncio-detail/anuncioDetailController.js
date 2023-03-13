@@ -8,32 +8,58 @@ export const anuncioDetailController = async (anuncioDetailElement, anuncioId) =
     const anuncio = await getAnuncioById(anuncioId)
     anuncioDetailElement.innerHTML = buildAnuncioDetail(anuncio)
     handleDeleteAnuncioButton(anuncioDetailElement, anuncio)
+    handleUpdateAnuncioButton(anuncioDetailElement, anuncio)
     // Cambio la programación del boton voler por --> onClick="history.back ()" 
     // handleVolverListaButton(anuncioDetailElement)
   } catch (error) {
     alert(error)
   }
 
-  function handleDeleteAnuncioButton(anuncioDetailElement, anuncio) {
+  function handleUpdateAnuncioButton(anuncioDetailElement, anuncio) {
     const token = localStorage.getItem('token');
-    const deleteButtonElement = anuncioDetailElement.querySelector('#deleteAnuncio');
+    const updateButtonElement = anuncioDetailElement.querySelector('#updateAnuncio');
 
     if (!token) {
-      deleteButtonElement.remove()
+      updateButtonElement.remove()
     } else {
       const userInfo = decodeToken(token);
       if (anuncio.userId === userInfo.userId) {
         // añadir evento click al boton + enganchar con sparrest
-        deleteButtonElement.addEventListener('click', async () => {
+        updateButtonElement.addEventListener('click', async () => {
+          /*
           const answer = confirm('¿Deseas borrar este anuncio?')
           if (answer) {
             await deleteAnuncio(anuncio.id)
             window.location = '/'
           }
+          */
         })
       } else {
-        deleteButtonElement.remove()
+        updateButtonElement.remove()
       }
+    }
+  }
+}
+
+function handleDeleteAnuncioButton(anuncioDetailElement, anuncio) {
+  const token = localStorage.getItem('token');
+  const deleteButtonElement = anuncioDetailElement.querySelector('#deleteAnuncio');
+
+  if (!token) {
+    deleteButtonElement.remove()
+  } else {
+    const userInfo = decodeToken(token);
+    if (anuncio.userId === userInfo.userId) {
+      // añadir evento click al boton + enganchar con sparrest
+      deleteButtonElement.addEventListener('click', async () => {
+        const answer = confirm('¿Deseas borrar este anuncio?')
+        if (answer) {
+          await deleteAnuncio(anuncio.id)
+          window.location = '/'
+        }
+      })
+    } else {
+      deleteButtonElement.remove()
     }
   }
 }
