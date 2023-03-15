@@ -24,7 +24,7 @@ export function loginController(loginElement){
     try {
       const jwt = await loginUser(username, password)
       localStorage.setItem('token', jwt)
-      window.location = '/';
+      window.location = './';
     } catch (error) {
       pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, error.message)
     }
