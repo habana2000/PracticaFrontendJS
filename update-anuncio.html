@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear anuncio</title>
+  <link rel="stylesheet" href="./update-anuncio/updateAnuncioStyle.css">
+</head>
+<body>
+  <h1>Modificar anuncio</h1>
+
+  <form id="updateAnuncioForm" class="form">
+
+    <table class="tabla">
+      <tr>
+        <td>
+          <label for="anuncioNombre">Nombre</label>
+        </td>
+        <td>
+          <input type="text" name="anuncioNombre" id="anuncioNombre" required>
+        </td>  
+      </tr>
+      <tr>
+        <td>
+          <label for="anuncioDescripcion">Descripción</label>
+        </td>
+        <td>
+          <textarea name="anuncioDescripcion" id="anuncioDescripcion" cols="30" rows="10" required></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="anuncioPrecio">Precio</label>
+        </td>
+        <td>
+          <input type="number" name="anuncioPrecio" id="anuncioPrecio" required>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="anuncioImagen">Imagen</label>
+        </td>
+        <td>
+          <input type="url" name="anuncioImagen" id="anuncioImagen">
+        </td>
+      </tr>
+        <tr>
+          <td colspan="2">
+            <fieldset>
+              <legend>Tipo de anuncio</legend>
+              <label for="compra" class="opcion">Compra</label>
+              <input type="radio" name="anuncioCompraVenta" id="compra" value="compra">
+              <label for="venta" class="opcion">Venta</label>
+              <input type="radio" name="anuncioCompraVenta" id="venta" value="venta">
+            </fieldset>
+          </td>
+        </tr>
+    </table>
+    
+    <button type="submit" class="boton">modificar anuncio</button>
+    <button type="button" class="boton" onClick="history.back ()">volver al detalle</button>
+  </form>
+
+  <script type="module" src="./update-anuncio/index.js"></script>
+</body>
+</html>

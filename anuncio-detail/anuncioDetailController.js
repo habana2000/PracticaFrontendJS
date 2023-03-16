@@ -26,6 +26,7 @@ export const anuncioDetailController = async (anuncioDetailElement, anuncioId) =
       if (anuncio.userId === userInfo.userId) {
         // añadir evento click al boton + enganchar con sparrest
         updateButtonElement.addEventListener('click', async () => {
+          window.location = `./update-anuncio.html?anuncioId=${anuncio.id}`
           /*
           const answer = confirm('¿Deseas borrar este anuncio?')
           if (answer) {
