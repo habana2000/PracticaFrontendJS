@@ -28,7 +28,7 @@ export const updateAnuncio = async (anuncioId,
 
   const token = localStorage.getItem('token')
 
-  const response = await fetch('http://localhost:8000/api/anuncios/${anuncioId}', {
+  const response = await fetch(`http://localhost:8000/api/anuncios/${anuncioId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
