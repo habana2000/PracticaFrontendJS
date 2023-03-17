@@ -53,4 +53,16 @@ Fecha: 19.MAR.23
 * anuncio-list
 * create-anuncio
 
+### Requisitos 
 
+* Listado de anuncios
+* Detalle de anuncio
+* Creación de anuncio
+* Login
+* Registro (Sign up)
+
+### Requisitos opcionales
+
+* Permitir editar un anuncio. 
+  * Se accede desde la vista de detalle del anuncio
+  * Sólo puede editarlo quien lo creó

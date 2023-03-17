@@ -49,5 +49,5 @@ export function buildErrorLoadingAnuncios() {
 }
 
 export function buildEmptyAnuncioList() {
-  return `<p>No hay resultados disponibles</p>`;
+  return `<p>No hay anuncios disponibles</p>`;
 }
